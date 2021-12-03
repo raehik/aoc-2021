@@ -7,12 +7,12 @@ import           Aoc2021.Util
 import qualified Data.Text as Text
 import           Data.Text ( Text )
 
-d1t2 :: Text -> Int
-d1t2 = count . map (uncurry (<)) . pairs . map sum . windows 3 . parse @Int
+t2 :: Text -> Int
+t2 = count . map (uncurry (<)) . pairs . map sum . windows 3 . parse @Int
   where count = foldr (\a b -> if a then b+1 else b) 0
 
-d1t1 :: Text -> Int
-d1t1 = count . map (uncurry (<)) . pairs . parse @Int
+t1 :: Text -> Int
+t1 = count . map (uncurry (<)) . pairs . parse @Int
   where count = foldr (\a b -> if a then b+1 else b) 0
 
 -- | Parse each line into a numeric ordinal.

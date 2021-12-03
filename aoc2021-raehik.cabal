@@ -16,6 +16,7 @@ library
   exposed-modules:
       Aoc2021.D1
       Aoc2021.D2
+      Aoc2021.D3
       Aoc2021.Runner
       Aoc2021.Util
   other-modules:

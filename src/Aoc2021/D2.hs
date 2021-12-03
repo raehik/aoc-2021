@@ -12,8 +12,8 @@ import           Optics
 import           Data.Generics.Product.Any
 import           GHC.Generics
 
-d2t2 :: Text -> Int
-d2t2 t =
+t2 :: Text -> Int
+t2 t =
     let course = parse t
         subEndPos = execState (simulateCourse course) subInitial
      in subX subEndPos * subY subEndPos
@@ -37,8 +37,8 @@ simulateCourse = mapM_ go
           CmdDown    -> over (the @"subAim") (+n)
           CmdUp      -> over (the @"subAim") (flip (-) n)
 
-d2t1 :: Text -> Int
-d2t1 t =
+t1 :: Text -> Int
+t1 t =
     let course = parse t
         subEndPos = execState (simulateCourse' course) sub'Initial
      in sub'X subEndPos * sub'Y subEndPos
@@ -71,8 +71,7 @@ parseCmd :: Text -> (Cmd, Int)
 parseCmd = (\[c, n] -> (parseCmd' c, tread n)) . Text.words
 
 parseCmd' :: Text -> Cmd
-parseCmd' = \case
-  "forward" -> CmdForward
-  "down"    -> CmdDown
-  "up"      -> CmdUp
-  _         -> error "invalid command"
+parseCmd' = \case "forward" -> CmdForward
+                  "down"    -> CmdDown
+                  "up"      -> CmdUp
+                  _         -> error "invalid command"
