@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.4.
+-- This file has been generated from package.yaml by hpack version 0.34.6.
 --
 -- see: https://github.com/sol/hpack
 
@@ -17,37 +17,29 @@ library
       Aoc2021.D1
       Aoc2021.D2
       Aoc2021.D3
+      Aoc2021.D4
+      Aoc2021.D4TypeLevel
       Aoc2021.Runner
       Aoc2021.Util
+      Finite
   other-modules:
       Paths_aoc2021_raehik
   hs-source-dirs:
       src
   default-extensions:
-      EmptyCase
-      FlexibleContexts
-      FlexibleInstances
-      InstanceSigs
-      MultiParamTypeClasses
+      GHC2021
       LambdaCase
-      DeriveGeneric
-      DeriveFoldable
-      DeriveFunctor
-      DeriveGeneric
-      DeriveLift
-      DeriveTraversable
       DerivingStrategies
-      GeneralizedNewtypeDeriving
-      StandaloneDeriving
-      BangPatterns
-      KindSignatures
-      TypeOperators
-      TypeApplications
+      NoStarIsType
+      DataKinds
+      TypeFamilies
   ghc-options: -Wall
   build-depends:
       base
+    , finite-typelits
     , generic-optics
     , mtl
     , optics
     , text
+    , vector-sized
   default-language: Haskell2010

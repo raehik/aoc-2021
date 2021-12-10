@@ -1,0 +1,4 @@
+packages:
+    .
+    ../../open-source/forks/generic-lens/generic-optics
+    ../../open-source/forks/generic-lens/generic-lens-core

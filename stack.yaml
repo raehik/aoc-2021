@@ -1,2 +1,5 @@
 resolver: lts-18.18
 packages: [.]
+extra-deps:
+- ../../open-source/forks/generic-lens/generic-lens-core
+- ../../open-source/forks/generic-lens/generic-optics
