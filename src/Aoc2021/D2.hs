@@ -2,7 +2,7 @@
 
 module Aoc2021.D2 where
 
-import           Aoc2021.Util
+import           Aoc2021.Parse
 
 import qualified Data.Text as Text
 import           Data.Text ( Text )

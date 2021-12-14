@@ -21,6 +21,8 @@ dependencies:
 - mtl
 - vector-sized
 - finite-typelits
+- megaparsec
+- parser-combinators
 
 ghc-options:
 - -Wall

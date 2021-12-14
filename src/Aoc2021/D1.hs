@@ -2,7 +2,7 @@
 
 module Aoc2021.D1 where
 
-import           Aoc2021.Util
+import           Aoc2021.Parse
 
 import qualified Data.Text as Text
 import           Data.Text ( Text )
@@ -12,7 +12,7 @@ t2 = count . map (uncurry (<)) . pairs . map sum . windows 3 . parse @Int
   where count = foldr (\a b -> if a then b+1 else b) 0
 
 t1 :: Text -> Int
-t1 = count . map (uncurry (<)) . pairs . parse @Int
+t1 = count . map (uncurry (<)) . pairs .                       parse @Int
   where count = foldr (\a b -> if a then b+1 else b) 0
 
 -- | Parse each line into a numeric ordinal.

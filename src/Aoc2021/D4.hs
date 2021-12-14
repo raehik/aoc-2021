@@ -2,7 +2,7 @@
 
 module Aoc2021.D4 where
 
-import           Aoc2021.Util
+import           Aoc2021.Parse
 import           GHC.TypeNats
 import           GHC.Generics
 import qualified Data.List      as List
