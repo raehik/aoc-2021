@@ -6,7 +6,11 @@ import qualified Aoc2021.Parse  as P
 import           Aoc2021.Parse  ( Parser )
 import           Data.Text      ( Text )
 
-data Coord = Coord { coordX :: Integer, coordY :: Integer } deriving (Eq, Show)
+data Coord = Coord { coordX :: Integer, coordY :: Integer } deriving (Eq)
+data Square = Square Coord Coord deriving (Eq, Show)
+
+instance Show Coord where
+    show (Coord x y) = "(" <> show x <> "," <> show y <> ")"
 
 parse :: Text -> [(Coord, Coord)]
 parse = P.parseMega pData
@@ -29,5 +33,8 @@ pCoord = do
     return $ Coord{..}
 
 -- _ :: [(Coord, Coord)] -> [Coord]
-f :: (Coord, Coord) -> [Coord]
-f (Coord c1x c1y) (Coord c2x c2y) = abs (c1y - c2y) n c1y c2y
+--f :: (Coord, Coord) -> [Coord]
+--f (Coord c1x c1y) (Coord c2x c2y) = abs (c1y - c2y) n c1y c2y
+
+g :: Coord -> Coord -> [Coord]
+g (Coord xMin xMax) (Coord yMin yMax) = concat $ map (\x -> map (\y -> Coord x y) [yMin..yMax]) [xMin..xMax]
